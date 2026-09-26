@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AuraStudio, a CSS-only interactive creative workspace by Mubashir (Roll No: 241845).">
+    <title>AuraStudio | Mubashir (241845)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Hidden CSS state controllers -->
+    <input class="theme-check" id="theme-check" type="checkbox" aria-label="Toggle night mode">
+    <input class="view-check" id="view-grid" name="view" type="radio" checked>
+    <input class="view-check" id="view-focus" name="view" type="radio">
+    <input class="view-check" id="view-notes" name="view" type="radio">
+    <input class="mood-check" id="mood-calm" name="mood" type="radio" checked>
+    <input class="mood-check" id="mood-energy" name="mood" type="radio">
+
+    <div class="app">
+        <!-- Top App Header -->
+        <header class="topbar">
+            <a class="wordmark" href="#top">
+                <span class="mark">A</span>
+                <span>aura<b>studio</b></span>
+            </a>
+            <div class="top-meta">
+                <span class="status"><i></i> Studio Online · Fall 2026</span>
+                <label class="theme-button" for="theme-check" title="Toggle Dark/Light Mode">
+                    <span class="sun-icon">☼</span>
+                    <b class="toggle-slider"></b>
+                    <span class="moon-icon">☾</span>
+                </label>
+                <div class="user-chip-top">
+                    <span class="avatar">MB</span>
+                    <span class="user-roll-badge">241845</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Studio Workspace -->
+        <div class="workspace" id="top">
+            <!-- Left Command Rail -->
+            <aside class="command-rail">
+                <div class="rail-caption">Workspace Controller</div>
+                <div class="user-card">
+                    <div class="user-face">MB</div>
+                    <div>
+                        <strong>Mubashir</strong>
+                        <small>Roll No: 241845</small>
+                    </div>
+                </div>
+
+                <!-- Navigation Tabs (Pure CSS Radio-driven) -->
+                <nav class="side-nav" aria-label="Workspace views">
+                    <label for="view-grid" class="nav-btn nav-overview">
+                        <span class="btn-icon">▦</span>
+                        <span class="btn-text">Overview</span>
+                        <b>01</b>
+                    </label>
+                    <label for="view-focus" class="nav-btn nav-focus">
+                        <span class="btn-icon">◒</span>
+                        <span class="btn-text">Focus Chamber</span>
+                        <b>02</b>
+                    </label>
+                    <label for="view-notes" class="nav-btn nav-notes">
+                        <span class="btn-icon">✎</span>
+                        <span class="btn-text">Scratchpad</span>
+                        <b>03</b>
+                    </label>
+                </nav>
+
+                <div class="rail-divider"></div>
+
+                <div class="rail-caption">Quick Actions</div>
+                <a class="rail-link" href="#canvas"><span>＋</span> Create Card</a>
+                <a class="rail-link" href="#palette"><span>◈</span> Chromatic Shelf</a>
+                
+                <div class="rail-bottom">
+                    <span>Coded by Mubashir</span>
+                    <strong>BS Computer Science</strong>
+                    <div class="mini-dots">
+                        <i></i><i></i><i></i><i></i><i></i>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content Area -->
+            <main class="content">
+                <!-- Welcome Banner -->
+                <section class="welcome">
+                    <div>
+                        <p class="overline">Fall Semester 2026 <span>•</span> Lab 2 Suite</p>
+                        <h1>Welcome back,<br><em>Mubashir.</em></h1>
+                        <p class="welcome-copy">
+                            Your interactive modules and creative telemetry are synced. Choose a workspace view or monitor live metrics below.
+                        </p>
+                    </div>
+                    <div class="weather">
+                        <span class="weather-temp">24°</span>
+                        <small>Islamabad / Rawalpindi<br>Clear atmospheric conditions</small>
+                        <b class="weather-symbol">◐</b>
+                    </div>
+                </section>
+
+                <!-- Responsive View Tabs for Mobile -->
+                <section class="view-tabs" aria-label="Workspace views mobile">
+                    <label for="view-grid">Overview</label>
+                    <label for="view-focus">Focus Chamber</label>
+                    <label for="view-notes">Scratchpad</label>
+                </section>
+
+                <!-- View 1: Overview Panel (Bento Boards) -->
+                <section class="view-panel overview-panel">
+                    <div class="section-bar">
+                        <div>
+                            <span class="section-number">01</span>
+                            <h2>Active Studio <em>Telemetry</em></h2>
+                        </div>
+                        <span class="date-pill">Roll: 241845 · Realtime</span>
+                    </div>
+
+                    <div class="board-grid" id="canvas">
+                        <!-- Primary Visual Art Board -->
+                        <article class="board-card primary-board">
+                            <div class="card-chrome">
+                                <span>COMPUTATIONAL HORIZON</span>
+                                <b>•••</b>
+                            </div>
+                            <div class="board-visual">
+                                <div class="sun-disc"></div>
+                                <div class="terrain terrain-back"></div>
+                                <div class="terrain terrain-front"></div>
+                                <span class="board-coordinate">33°41' N<br>73°04' E</span>
+                                <strong>System<br>Architectures.</strong>
+                            </div>
+                            <div class="board-footer">
+                                <span>visual study / 024</span>
+                                <b>↗</b>
+                            </div>
+                        </article>
+
+                        <!-- Task Board -->
+                        <article class="board-card task-board">
+                            <div class="card-chrome">
+                                <span>CURRENT SPRINT</span>
+                                <b>04:30 PM</b>
+                            </div>
+                            <h3>Engineering<br>Responsive UI.</h3>
+                            <p>Refining component tokens and flexible layouts for Lab 2 verification.</p>
+                            <div class="task-meter">
+                                <i></i>
+                            </div>
+                            <div class="task-foot">
+                                <span>Completion</span>
+                                <b>88%</b>
+                            </div>
+                        </article>
+
+                        <!-- Typography Quote Board -->
+                        <article class="board-card quote-board">
+                            <span class="quote-mark">“</span>
+                            <p>Simplicity is prerequisite for <em>reliability.</em></p>
+                            <small>EDSGER W. DIJKSTRA</small>
+                        </article>
+
+                        <!-- Interactive Chromatic Palette Board -->
+                        <article class="board-card palette-board" id="palette">
+                            <div class="card-chrome">
+                                <span>CHROMATIC MOOD</span>
+                                <b class="mood-active-indicator">vibrant</b>
+                            </div>
+                            <div class="palette-orb orb-one"></div>
+                            <div class="palette-orb orb-two"></div>
+                            <div class="palette-orb orb-three"></div>
+                            <div class="mood-controls">
+                                <label for="mood-calm">calm cyan</label>
+                                <label for="mood-energy">solar iris</label>
+                            </div>
+                        </article>
+
+                        <!-- Graph Board -->
+                        <article class="board-card graph-board">
+                            <div class="card-chrome">
+                                <span>INFERENCE THROUGHPUT</span>
+                                <b>+28.4%</b>
+                            </div>
+                            <div class="graph">
+                                <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                                <svg viewBox="0 0 300 100" preserveAspectRatio="none" aria-hidden="true">
+                                    <path d="M0,80 C30,72 40,40 65,52 S95,85 120,55 S155,12 180,44 S210,74 235,30 S270,55 300,15"></path>
+                                </svg>
+                            </div>
+                            <div class="graph-labels">
+                                <span>08:00 AM</span>
+                                <span>12:00 PM</span>
+                                <span>04:00 PM</span>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- View 2: Focus Panel -->
+                <section class="view-panel focus-panel">
+                    <div class="focus-layout">
+                        <div>
+                            <span class="section-number">02</span>
+                            <h2>Deep Focus.<br><em>Peak Output.</em></h2>
+                            <p>A distraction-free zone configured for deep problem solving and algorithmic analysis.</p>
+                        </div>
+                        <div class="timer">
+                            <div>
+                                <strong>50</strong>
+                                <small>MINUTES<br>SESSION</small>
+                            </div>
+                            <span>Active Sprint · 241845</span>
+                        </div>
+                        <div class="focus-list">
+                            <label><input type="checkbox" checked><span>Analyze Stream Pipeline Complexity</span></label>
+                            <label><input type="checkbox" checked><span>Verify Responsive CSS Grid Layouts</span></label>
+                            <label><input type="checkbox"><span>Synthesize Academic Laboratory Report</span></label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- View 3: Notes Scratchpad Panel -->
+                <section class="view-panel notes-panel">
+                    <div class="section-bar">
+                        <div>
+                            <span class="section-number">03</span>
+                            <h2>Technical Notes,<br><em>Key Insights.</em></h2>
+                        </div>
+                        <span class="date-pill">3 saved entries</span>
+                    </div>
+                    <div class="note-stack">
+                        <details open>
+                            <summary><span>01</span> Structure before Aesthetics <b>−</b></summary>
+                            <p>Semantic HTML delivers natural accessibility, SEO advantages, and robust cross-device interoperability prior to any visual styling.</p>
+                        </details>
+                        <details>
+                            <summary><span>02</span> Maintain Rigid Design Tokens <b>+</b></summary>
+                            <p>Establishing centralized CSS custom properties for spacing, surfaces, and typography keeps multi-page suites cohesive and effortless to maintain.</p>
+                        </details>
+                        <details>
+                            <summary><span>03</span> Optimize for Graceful Degradation <b>+</b></summary>
+                            <p>Using CSS Grid with fluid clamp() typography guarantees responsive perfection across tiny mobile viewports up to 4K displays.</p>
+                        </details>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <span>AURASTUDIO / WORKSPACE ENVIRONMENT</span>
+            <span>© 2026 Mubashir (Roll No: 241845)</span>
+            <a href="#top">Return to Top ↑</a>
+        </footer>
+    </div>
+</body>
+</html>

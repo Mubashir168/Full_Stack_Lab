@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConnectFeed - Modern Social Hub (Mubashir 241845)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-body: #0b0f17;
+            --bg-surface: #141b26;
+            --bg-surface-elevated: #1b2434;
+            --bg-hover: #222d40;
+            --border-subtle: rgba(148, 163, 184, 0.12);
+            --border-active: rgba(59, 130, 246, 0.4);
+            
+            --primary: #3b82f6;
+            --primary-glow: rgba(59, 130, 246, 0.25);
+            --accent-cyan: #06b6d4;
+            --accent-green: #10b981;
+            --accent-rose: #f43f5e;
+            
+            --text-main: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-full: 9999px;
+            
+            --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            min-height: 100vh;
+            line-height: 1.5;
+        }
+
+        /* Top Navigation Header */
+        .top-navbar {
+            position: sticky;
+            top: 0;
+            background: rgba(15, 23, 38, 0.88);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border-subtle);
+            z-index: 1000;
+            padding: 0 20px;
+            height: 60px;
+        }
+
+        .navbar-inner {
+            max-width: 1440px;
+            height: 100%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        /* Nav Left */
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            min-width: 280px;
+        }
+
+        .app-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text-main);
+        }
+
+        .logo-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: var(--radius-md);
+            background: linear-gradient(135deg, var(--primary), var(--accent-cyan));
+            display: grid;
+            place-items: center;
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 800;
+            box-shadow: 0 4px 14px var(--primary-glow);
+        }
+
+        .logo-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .logo-title span {
+            color: var(--primary);
+        }
+
+        .search-container {
+            position: relative;
+            flex: 1;
+            max-width: 260px;
+        }
+
+        .search-container i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .search-container input {
+            width: 100%;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-full);
+            padding: 8px 14px 8px 36px;
+            color: var(--text-main);
+            font-size: 0.85rem;
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        .search-container input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-glow);
+            background: var(--bg-surface-elevated);
+        }
+
+        /* Nav Center */
+        .nav-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex: 1;
+        }
+
+        .nav-tab {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px;
+            height: 48px;
+            border-radius: var(--radius-md);
+            color: var(--text-secondary);
+            font-size: 1.25rem;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.2s;
+        }
+
+        .nav-tab:hover {
+            background: var(--bg-surface-elevated);
+            color: var(--text-main);
+        }
+
+        .nav-tab.active {
+            color: var(--primary);
+        }
+
+        .nav-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            width: 38px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: var(--radius-full);
+            box-shadow: 0 0 8px var(--primary);
+        }
+
+        /* Nav Right */
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 280px;
+            justify-content: flex-end;
+        }
+
+        .nav-icon-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.2s;
+        }
+
+        .nav-icon-btn:hover {
+            background: var(--bg-hover);
+            color: var(--text-main);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .badge-count {
+            position: absolute;
+            top: -3px;
+            right: -3px;
+            background: var(--accent-rose);
+            color: #fff;
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 2px 5px;
+            border-radius: var(--radius-full);
+            border: 2px solid var(--bg-body);
+        }
+
+        .user-nav-chip {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 4px 10px 4px 4px;
+            border-radius: var(--radius-full);
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .user-nav-chip:hover {
+            background: var(--bg-hover);
+            border-color: var(--border-active);
+        }
+
+        .user-nav-chip img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .user-nav-name {
+            font-size: 0.82rem;
+            font-weight: 600;
+        }
+
+        .user-nav-roll {
+            font-size: 0.7rem;
+            color: var(--primary);
+            font-weight: 700;
+            background: var(--primary-glow);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* Main Workspace Layout */
+        .workspace-grid {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 280px minmax(0, 1fr) 280px;
+            gap: 24px;
+            align-items: start;
+        }
+
+        /* Left Navigation Rail */
+        .left-rail {
+            position: sticky;
+            top: 80px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .rail-profile-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 14px;
+            border-radius: var(--radius-md);
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+
+        .rail-avatar-lg {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .rail-avatar-lg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .rail-profile-meta strong {
+            display: block;
+            font-size: 0.92rem;
+            font-weight: 700;
+        }
+
+        .rail-profile-meta span {
+            font-size: 0.75rem;
+            color: var(--accent-cyan);
+            font-weight: 600;
+        }
+
+        .rail-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 10px 14px;
+            border-radius: var(--radius-md);
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .rail-item:hover {
+            background: var(--bg-surface);
+            color: var(--text-main);
+            transform: translateX(4px);
+        }
+
+        .rail-item.active {
+            background: var(--bg-surface-elevated);
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .rail-icon {
+            width: 22px;
+            display: flex;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        .rail-divider {
+            height: 1px;
+            background: var(--border-subtle);
+            margin: 10px 0;
+        }
+
+        .rail-caption {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            padding: 8px 14px 4px;
+        }
+
+        /* Feed Center Column */
+        .feed-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Stories Carousel */
+        .stories-strip {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding-bottom: 6px;
+        }
+
+        .stories-strip::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .stories-strip::-webkit-scrollbar-thumb {
+            background: var(--border-subtle);
+            border-radius: var(--radius-full);
+        }
+
+        .story-bubble {
+            position: relative;
+            flex: 0 0 115px;
+            height: 175px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border-subtle);
+            transition: transform 0.25s ease;
+        }
+
+        .story-bubble:hover {
+            transform: scale(1.03);
+            border-color: var(--primary);
+        }
+
+        .story-bg-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.85);
+            transition: filter 0.2s;
+        }
+
+        .story-bubble:hover .story-bg-img {
+            filter: brightness(1);
+        }
+
+        .story-ring-avatar {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+
+        .story-ring-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .story-author-label {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+            line-height: 1.2;
+        }
+
+        .create-story-card {
+            background: var(--bg-surface);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            padding-bottom: 14px;
+            border: 1px dashed var(--border-active);
+        }
+
+        .create-story-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: #fff;
+            display: grid;
+            place-items: center;
+            font-size: 1rem;
+            margin-bottom: 8px;
+            box-shadow: 0 4px 12px var(--primary-glow);
+        }
+
+        /* Create Post Card */
+        .composer-card {
+            background: var(--bg-surface);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-subtle);
+            padding: 16px 20px;
+            box-shadow: var(--shadow-card);
+        }
+
+        .composer-top {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .composer-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .composer-input-btn {
+            flex: 1;
+            background: var(--bg-surface-elevated);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-full);
+            padding: 12px 18px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: left;
+        }
+
+        .composer-input-btn:hover {
+            background: var(--bg-hover);
+            color: var(--text-main);
+            border-color: var(--border-active);
+        }
+
+        .composer-actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding-top: 12px;
+        }
+
+        .action-chip {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: var(--radius-md);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .action-chip:hover {
+            background: var(--bg-surface-elevated);
+            color: var(--text-main);
+        }
+
+        .action-chip i.fa-photo-film { color: var(--accent-green); }
+        .action-chip i.fa-face-smile { color: #f59e0b; }
+        .action-chip i.fa-location-dot { color: var(--accent-rose); }
+
+        /* Social Post Card */
+        .post-card {
+            background: var(--bg-surface);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-subtle);
+            box-shadow: var(--shadow-card);
+            overflow: hidden;
+            transition: border-color 0.2s;
+        }
+
+        .post-card:hover {
+            border-color: rgba(148, 163, 184, 0.25);
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+        }
+
+        .author-info-cluster {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .post-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-text h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .verified-badge {
+            color: var(--primary);
+            font-size: 0.8rem;
+        }
+
+        .post-timestamp {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .post-menu-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1rem;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            transition: all 0.2s;
+        }
+
+        .post-menu-btn:hover {
+            background: var(--bg-surface-elevated);
+            color: var(--text-main);
+        }
+
+        .post-body-text {
+            padding: 0 20px 14px;
+            font-size: 0.92rem;
+            line-height: 1.6;
+            color: var(--text-main);
+        }
+
+        .post-media-box {
+            width: 100%;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .post-media-box img {
+            width: 100%;
+            max-height: 480px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .post-metrics-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 20px;
+            border-bottom: 1px solid var(--border-subtle);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .reactions-cluster {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .icon-stack {
+            display: flex;
+            align-items: center;
+        }
+
+        .stack-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-size: 0.65rem;
+            color: #fff;
+            margin-right: -4px;
+            border: 2px solid var(--bg-surface);
+        }
+
+        .like-icon { background: var(--primary); }
+        .heart-icon { background: var(--accent-rose); }
+
+        .comments-shares {
+            display: flex;
+            gap: 14px;
+        }
+
+        .post-actions-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 6px 12px;
+        }
+
+        .interaction-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 0;
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: var(--radius-md);
+            transition: all 0.2s;
+        }
+
+        .interaction-btn:hover {
+            background: var(--bg-surface-elevated);
+            color: var(--primary);
+        }
+
+        /* Right Sidebar Contacts */
+        .right-rail {
+            position: sticky;
+            top: 80px;
+            background: var(--bg-surface);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-subtle);
+            padding: 16px;
+            box-shadow: var(--shadow-card);
+        }
+
+        .contacts-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .contacts-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+        }
+
+        .contact-tool-icons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .contact-tool-icons i {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+
+        .contact-tool-icons i:hover {
+            color: var(--text-main);
+        }
+
+        .contact-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 10px;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .contact-row:hover {
+            background: var(--bg-surface-elevated);
+        }
+
+        .contact-avatar-box {
+            position: relative;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .contact-avatar-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .online-dot {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent-green);
+            border: 2px solid var(--bg-surface);
+        }
+
+        .contact-name-tag {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .you-badge {
+            font-size: 0.65rem;
+            color: var(--primary);
+            background: var(--primary-glow);
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 1100px) {
+            .workspace-grid {
+                grid-template-columns: 240px minmax(0, 1fr);
+            }
+            .right-rail {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-navbar {
+                padding: 0 10px;
+            }
+            .search-container {
+                display: none;
+            }
+            .workspace-grid {
+                grid-template-columns: 1fr;
+                padding: 12px;
+            }
+            .left-rail {
+                display: none;
+            }
+            .nav-left, .nav-right {
+                min-width: auto;
+            }
+            .nav-tab {
+                width: 48px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navbar -->
+    <header class="top-navbar">
+        <div class="navbar-inner">
+            <div class="nav-left">
+                <a href="#top" class="app-logo">
+                    <div class="logo-icon"><i class="fab fa-facebook-f"></i></div>
+                    <div class="logo-title">Connect<span>Social</span></div>
+                </a>
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search friends, posts, tags...">
+                </div>
+            </div>
+
+            <nav class="nav-center" aria-label="Quick Switcher">
+                <div class="nav-tab active" title="Feed"><i class="fas fa-house-chimney"></i></div>
+                <div class="nav-tab" title="Video Stream"><i class="fas fa-tv"></i></div>
+                <div class="nav-tab" title="Marketplace"><i class="fas fa-store"></i></div>
+                <div class="nav-tab" title="Groups"><i class="fas fa-users-rectangle"></i></div>
+                <div class="nav-tab" title="Gaming"><i class="fas fa-gamepad"></i></div>
+            </nav>
+
+            <div class="nav-right">
+                <div class="nav-icon-btn" title="Create"><i class="fas fa-plus"></i></div>
+                <div class="nav-icon-btn" title="Messages">
+                    <i class="fas fa-comment-dots"></i>
+                    <span class="badge-count">4</span>
+                </div>
+                <div class="nav-icon-btn" title="Notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge-count">7</span>
+                </div>
+                <div class="user-nav-chip" title="Profile Details">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Mubashir">
+                    <span class="user-nav-name">Mubashir</span>
+                    <span class="user-nav-roll">241845</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Workspace 3-Column Layout -->
+    <main class="workspace-grid" id="top">
+        <!-- Left Navigation Rail -->
+        <aside class="left-rail">
+            <div class="rail-profile-box">
+                <div class="rail-avatar-lg">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Mubashir">
+                </div>
+                <div class="rail-profile-meta">
+                    <strong>Mubashir</strong>
+                    <span>Roll No: 241845</span>
+                </div>
+            </div>
+
+            <a href="#" class="rail-item active">
+                <span class="rail-icon"><i class="fas fa-newspaper"></i></span>
+                <span>Feed Stream</span>
+            </a>
+            <a href="#" class="rail-item">
+                <span class="rail-icon"><i class="fas fa-user-group"></i></span>
+                <span>Friends Network</span>
+            </a>
+            <a href="#" class="rail-item">
+                <span class="rail-icon"><i class="fas fa-bookmark"></i></span>
+                <span>Saved Collections</span>
+            </a>
+            <a href="#" class="rail-item">
+                <span class="rail-icon"><i class="fas fa-clock-rotate-left"></i></span>
+                <span>Memories & Recaps</span>
+            </a>
+            <a href="#" class="rail-item">
+                <span class="rail-icon"><i class="fas fa-calendar-check"></i></span>
+                <span>Events & Meetups</span>
+            </a>
+
+            <div class="rail-divider"></div>
+            <div class="rail-caption">Managed Communities</div>
+
+            <a href="#" class="rail-item">
+                <span class="rail-icon"><i class="fas fa-code"></i></span>
+                <span>Full Stack Lab CS</span>
+            </a>
+            <a href="#" class="rail-item">
+                <span class="rail-icon"><i class="fas fa-laptop-code"></i></span>
+                <span>Web Architecture 2026</span>
+            </a>
+        </aside>
+
+        <!-- Center Feed Stream -->
+        <div class="feed-column">
+            <!-- Stories Strip -->
+            <section class="stories-strip" aria-label="Stories">
+                <!-- Create Story -->
+                <div class="story-bubble create-story-card">
+                    <div class="create-story-icon"><i class="fas fa-plus"></i></div>
+                    <span class="story-author-label" style="text-align: center;">Add Story</span>
+                </div>
+
+                <!-- Story 1: Mubashir -->
+                <div class="story-bubble">
+                    <img class="story-bg-img" src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80" alt="Workspace">
+                    <div class="story-ring-avatar">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Mubashir">
+                    </div>
+                    <span class="story-author-label">Mubashir (You)</span>
+                </div>
+
+                <!-- Story 2: Farhan -->
+                <div class="story-bubble">
+                    <img class="story-bg-img" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400&q=80" alt="Coding">
+                    <div class="story-ring-avatar">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Farhan">
+                    </div>
+                    <span class="story-author-label">Farhan Adil</span>
+                </div>
+
+                <!-- Story 3: Romana -->
+                <div class="story-bubble">
+                    <img class="story-bg-img" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80" alt="Coffee desk">
+                    <div class="story-ring-avatar">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" alt="Romana">
+                    </div>
+                    <span class="story-author-label">Romana Maroof</span>
+                </div>
+
+                <!-- Story 4: Ahmed -->
+                <div class="story-bubble">
+                    <img class="story-bg-img" src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=400&q=80" alt="Matrix Code">
+                    <div class="story-ring-avatar">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="Ahmed">
+                    </div>
+                    <span class="story-author-label">Ahmed Hassan</span>
+                </div>
+            </section>
+
+            <!-- Composer Card -->
+            <section class="composer-card">
+                <div class="composer-top">
+                    <img class="composer-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Mubashir">
+                    <div class="composer-input-btn">
+                        What's on your mind, Mubashir? Share an update or code snippet...
+                    </div>
+                </div>
+                <div class="composer-actions">
+                    <div class="action-chip"><i class="fas fa-photo-film"></i> Media</div>
+                    <div class="action-chip"><i class="fas fa-face-smile"></i> Activity</div>
+                    <div class="action-chip"><i class="fas fa-location-dot"></i> Check In</div>
+                </div>
+            </section>
+
+            <!-- Post 1: Mubashir Featured Post -->
+            <article class="post-card">
+                <div class="post-header">
+                    <div class="author-info-cluster">
+                        <img class="post-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Mubashir">
+                        <div class="author-text">
+                            <h4>Mubashir <span class="verified-badge"><i class="fas fa-circle-check"></i></span></h4>
+                            <span class="post-timestamp">Just now · Roll No: 241845 · <i class="fas fa-globe-americas"></i></span>
+                        </div>
+                    </div>
+                    <button class="post-menu-btn"><i class="fas fa-ellipsis"></i></button>
+                </div>
+                <div class="post-body-text">
+                    Excited to wrap up our modern Full-Stack Web Development Lab 2 project! Refactored the UI across all modules with modern responsive CSS, clean components, and strict standards. Ready for evaluation! 🚀💻 #WebDev #FullStack #Lab2
+                </div>
+                <div class="post-media-box">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1000&q=85" alt="Code on Screen">
+                </div>
+                <div class="post-metrics-bar">
+                    <div class="reactions-cluster">
+                        <div class="icon-stack">
+                            <span class="stack-icon like-icon"><i class="fas fa-thumbs-up"></i></span>
+                            <span class="stack-icon heart-icon"><i class="fas fa-heart"></i></span>
+                        </div>
+                        <span>184 likes</span>
+                    </div>
+                    <div class="comments-shares">
+                        <span>32 comments</span>
+                        <span>19 shares</span>
+                    </div>
+                </div>
+                <div class="post-actions-row">
+                    <button class="interaction-btn"><i class="far fa-thumbs-up"></i> Like</button>
+                    <button class="interaction-btn"><i class="far fa-comment"></i> Comment</button>
+                    <button class="interaction-btn"><i class="far fa-share-from-square"></i> Share</button>
+                </div>
+            </article>
+
+            <!-- Post 2: Farhan Adil -->
+            <article class="post-card">
+                <div class="post-header">
+                    <div class="author-info-cluster">
+                        <img class="post-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Farhan Adil">
+                        <div class="author-text">
+                            <h4>Farhan Adil</h4>
+                            <span class="post-timestamp">2 hours ago · <i class="fas fa-user-group"></i></span>
+                        </div>
+                    </div>
+                    <button class="post-menu-btn"><i class="fas fa-ellipsis"></i></button>
+                </div>
+                <div class="post-body-text">
+                    Just finalized the COAL system architecture benchmark. Assembly registers and pipeline logic are running super smooth! Check it out.
+                </div>
+                <div class="post-media-box">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=85" alt="Hardware setup">
+                </div>
+                <div class="post-metrics-bar">
+                    <div class="reactions-cluster">
+                        <div class="icon-stack">
+                            <span class="stack-icon like-icon"><i class="fas fa-thumbs-up"></i></span>
+                        </div>
+                        <span>145 likes</span>
+                    </div>
+                    <div class="comments-shares">
+                        <span>23 comments</span>
+                        <span>12 shares</span>
+                    </div>
+                </div>
+                <div class="post-actions-row">
+                    <button class="interaction-btn"><i class="far fa-thumbs-up"></i> Like</button>
+                    <button class="interaction-btn"><i class="far fa-comment"></i> Comment</button>
+                    <button class="interaction-btn"><i class="far fa-share-from-square"></i> Share</button>
+                </div>
+            </article>
+
+            <!-- Post 3: Romana Maroof -->
+            <article class="post-card">
+                <div class="post-header">
+                    <div class="author-info-cluster">
+                        <img class="post-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" alt="Romana Maroof">
+                        <div class="author-text">
+                            <h4>Romana Maroof</h4>
+                            <span class="post-timestamp">4 hours ago · <i class="fas fa-globe-americas"></i></span>
+                        </div>
+                    </div>
+                    <button class="post-menu-btn"><i class="fas fa-ellipsis"></i></button>
+                </div>
+                <div class="post-body-text">
+                    Morning coffee ☕ paired with responsive CSS Grid layouts! Building flexible design tokens for tomorrow's demo.
+                </div>
+                <div class="post-media-box">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=85" alt="Developer Desk">
+                </div>
+                <div class="post-metrics-bar">
+                    <div class="reactions-cluster">
+                        <div class="icon-stack">
+                            <span class="stack-icon heart-icon"><i class="fas fa-heart"></i></span>
+                        </div>
+                        <span>89 likes</span>
+                    </div>
+                    <div class="comments-shares">
+                        <span>15 comments</span>
+                        <span>8 shares</span>
+                    </div>
+                </div>
+                <div class="post-actions-row">
+                    <button class="interaction-btn"><i class="far fa-thumbs-up"></i> Like</button>
+                    <button class="interaction-btn"><i class="far fa-comment"></i> Comment</button>
+                    <button class="interaction-btn"><i class="far fa-share-from-square"></i> Share</button>
+                </div>
+            </article>
+        </div>
+
+        <!-- Right Rail Contacts -->
+        <aside class="right-rail">
+            <div class="contacts-top">
+                <span class="contacts-title">Active Contacts</span>
+                <div class="contact-tool-icons">
+                    <i class="fas fa-video"></i>
+                    <i class="fas fa-magnifying-glass"></i>
+                    <i class="fas fa-ellipsis"></i>
+                </div>
+            </div>
+
+            <!-- Contact List -->
+            <div class="contact-row">
+                <div class="contact-avatar-box">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Mubashir">
+                    <span class="online-dot"></span>
+                </div>
+                <span class="contact-name-tag">Mubashir <span class="you-badge">You</span></span>
+            </div>
+
+            <div class="contact-row">
+                <div class="contact-avatar-box">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Farhan">
+                    <span class="online-dot"></span>
+                </div>
+                <span class="contact-name-tag">Farhan Adil</span>
+            </div>
+
+            <div class="contact-row">
+                <div class="contact-avatar-box">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" alt="Romana">
+                    <span class="online-dot"></span>
+                </div>
+                <span class="contact-name-tag">Romana Maroof</span>
+            </div>
+
+            <div class="contact-row">
+                <div class="contact-avatar-box">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="Ahmed">
+                    <span class="online-dot"></span>
+                </div>
+                <span class="contact-name-tag">Ahmed Hassan</span>
+            </div>
+
+            <div class="contact-row">
+                <div class="contact-avatar-box">
+                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=120&q=80" alt="Sara">
+                </div>
+                <span class="contact-name-tag">Sara Ahmed</span>
+            </div>
+
+            <div class="contact-row">
+                <div class="contact-avatar-box">
+                    <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=120&q=80" alt="Zainab">
+                    <span class="online-dot"></span>
+                </div>
+                <span class="contact-name-tag">Zainab Khan</span>
+            </div>
+        </aside>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+/* Reset & Typography */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", Roboto, sans-serif;
+  user-select: none;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 30%, #f8fafc 100%);
+  padding: 24px;
+}
+
+/* Main Calculator Container */
+.calculator {
+  width: 360px;
+  padding: 22px 20px 18px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.96) 0%, rgba(15, 23, 42, 0.9) 100%);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.22), inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+/* Header Badge */
+.calc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 6px 16px;
+}
+
+.brand-title {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(135deg, #34d399, #10b981);
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.9);
+}
+
+/* Display */
+.display {
+  background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+  border-radius: 16px;
+  padding: 18px 16px 14px;
+  margin-bottom: 20px;
+  text-align: right;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  box-shadow: inset 0 2px 8px rgba(15, 23, 42, 0.12), inset 0 -2px 8px rgba(255,255,255,0.7);
+}
+
+.previous-operand {
+  color: #64748b;
+  font-size: 0.82rem;
+  font-weight: 500;
+  min-height: 1.1rem;
+  margin-bottom: 8px;
+  letter-spacing: 0.4px;
+}
+
+.current-operand {
+  color: #0f172a;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -1px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Keypad Grid Layout */
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+/* Buttons */
+.btn {
+  height: 58px;
+  border: none;
+  border-radius: 14px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  cursor: pointer;
+  background: linear-gradient(180deg, #334155 0%, #1e293b 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 6px 10px rgba(15, 23, 42, 0.2), inset 0 1px 0 rgba(255,255,255,0.08);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+}
+
+.btn:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.18), inset 0 2px 6px rgba(15, 23, 42, 0.35);
+}
+
+.btn-zero {
+  grid-column: span 2;
+  text-align: left;
+  padding-left: 22px;
+}
+
+.btn-function {
+  color: #e2e8f0;
+  background: linear-gradient(180deg, #1f2a37 0%, #111827 100%);
+}
+
+.btn-operator {
+  color: #7dd3fc;
+  background: linear-gradient(180deg, #1d4ed8 0%, #1e3a8a 100%);
+}
+
+.btn-operator:hover {
+  color: white;
+  background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 100%);
+}
+
+.btn-equals {
+  color: #ffffff;
+  background: linear-gradient(180deg, #14b8a6 0%, #0f766e 100%);
+  box-shadow: 0 8px 16px rgba(20, 184, 166, 0.38), inset 0 1px 0 rgba(255,255,255,0.25);
+}
+
+.btn-equals:hover {
+  background: linear-gradient(180deg, #2dd4bf 0%, #0f766e 100%);
+}

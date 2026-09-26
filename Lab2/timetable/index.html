@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Class Timetable - Mubashir (241845)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="dashboard-shell">
+        <!-- Top University Header Bar -->
+        <header class="schedule-header">
+            <div class="header-left">
+                <div class="student-profile-chip">
+                    <div class="student-avatar">MB</div>
+                    <div class="student-meta">
+                        <span class="meta-label"><i class="fas fa-user-graduate"></i> Enrolled Student</span>
+                        <strong>Mubashir</strong>
+                        <span class="roll-tag"><i class="fas fa-id-card"></i> Roll No: 241845</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-center">
+                <div class="academic-badge">Department of Computer Science</div>
+                <h1>Weekly Academic Timetable</h1>
+                <p class="schedule-subtitle">Official Lecture & Laboratory Schedule · Fall Semester 2026</p>
+            </div>
+
+            <div class="header-right">
+                <div class="meta-card">
+                    <span class="meta-card-title">SEMESTER</span>
+                    <strong class="meta-card-value">05</strong>
+                    <span class="meta-card-sub">Shift-I · CS</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Timetable Card Container -->
+        <section class="timetable-container" aria-label="Class Timetable Schedule">
+            <div class="table-scroller">
+                <table class="schedule-grid">
+                    <colgroup>
+                        <col class="col-day">
+                        <col span="8" class="col-period">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th class="th-corner">
+                                <span class="corner-period"><i class="far fa-calendar"></i> DAY</span>
+                                <span class="corner-session">FALL 2026</span>
+                            </th>
+                            <th>
+                                <span class="time-block">08:00 <small>AM</small></span>
+                                <span class="time-duration">08:00 – 09:00</span>
+                            </th>
+                            <th>
+                                <span class="time-block">09:00 <small>AM</small></span>
+                                <span class="time-duration">09:00 – 10:00</span>
+                            </th>
+                            <th>
+                                <span class="time-block">10:00 <small>AM</small></span>
+                                <span class="time-duration">10:00 – 11:00</span>
+                            </th>
+                            <th>
+                                <span class="time-block">11:00 <small>AM</small></span>
+                                <span class="time-duration">11:00 – 12:00</span>
+                            </th>
+                            <th>
+                                <span class="time-block">12:00 <small>PM</small></span>
+                                <span class="time-duration">12:00 – 01:00</span>
+                            </th>
+                            <th>
+                                <span class="time-block">01:00 <small>PM</small></span>
+                                <span class="time-duration">01:00 – 02:00</span>
+                            </th>
+                            <th>
+                                <span class="time-block">02:00 <small>PM</small></span>
+                                <span class="time-duration">02:00 – 03:00</span>
+                            </th>
+                            <th>
+                                <span class="time-block">03:00 <small>PM</small></span>
+                                <span class="time-duration">03:00 – 04:00</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Monday -->
+                        <tr>
+                            <th class="day-cell">
+                                <span class="day-short">MON</span>
+                                <span class="day-full">Monday</span>
+                            </th>
+                            <td class="slot class-cell ai">
+                                <div class="class-inner">
+                                    <span class="subject-tag"><i class="fas fa-robot"></i> Artificial Intelligence</span>
+                                    <span class="faculty-tag"><i class="fas fa-chalkboard-user"></i> CS-Ms Maryam Wardah</span>
+                                    <span class="room-tag"><i class="fas fa-location-dot"></i> C-205 · Shift-I</span>
+                                </div>
+                            </td>
+                            <td class="slot class-cell os">
+                                <div class="class-inner">
+                                    <span class="subject-tag"><i class="fas fa-microchip"></i> Operating Systems</span>
+                                    <span class="faculty-tag"><i class="fas fa-chalkboard-user"></i> CS-Ms Emaan Fatima</span>
+                                    <span class="room-tag"><i class="fas fa-location-dot"></i> C-201 · Lecture Hall 01</span>
+                                </div>
+                            </td>
+                            <td class="slot class-cell daa">
+                                <div class="class-inner">
+                                    <span class="subject-tag"><i class="fas fa-code-branch"></i> Design & Analysis of Algorithms</span>
+                                    <span class="faculty-tag"><i class="fas fa-chalkboard-user"></i> CS-Mr Junaid Nazar</span>
+                                    <span class="room-tag"><i class="fas fa-location-dot"></i> C-202 · Shift-I</span>
+                                </div>
+                            </td>
+                            <td class="slot class-cell algebra">
+                                <div class="class-inner">
+                                    <span class="subject-tag"><i class="fas fa-square-root-variable"></i> Linear Algebra</span>
+                                    <span class="faculty-tag"><i class="fas fa-chalkboard-user"></i> Maths-Dr Waqas Sarwar</span>
+                                    <span class="room-tag"><i class="fas fa-location-dot"></i> C-301 · Shift-I</span>
+                                </div>
+                            </td>
+                            <td class="slot empty-slot">
+                                <span class="break-label">Break</span>
+                            </td>
+                            <td class="slot class-cell management">
+                                <div class="class-inner">
+                                    <span class="subject-tag"><i class="fas fa-briefcase"></i> Intro to Management</span>
+                                    <span class="faculty-tag"><i class="fas fa-chalkboard-user"></i> AUSOM-Ms Ayesha Munir</span>
+                                    <span class="room-tag"><i class="fas fa-location-dot"></i> C-303 · Shift-I</span>
+                                </div>
+                            </td>
+                            <td class="slot empty-slot" colspan="2">
+                                <span class="break-label">Free Period</span>
+                            </td>
+                        </tr>
+
+                        <!-- Tuesday -->
+                        <tr>
+                            <th class="day-cell">
+                                <span class="day-short">TUE</span>
+                                <span class="day-full">Tuesday</span>
+                            </th>
+                            <td class="slot class-cell ai lab-span" colspan="3">
+                                <div class="class-inner">
+                                    <span class="subject-tag"><i class="fas fa-flask"></i> Artificial Intelligence Lab</span>
+                                    <span class="faculty-tag"><i class="fas fa-chalkboard-user"></i> CS-Ms Maryam Wardah</span>
+                                    <span class="room-tag"><i class="fas fa-location-dot"></i> Lab 5 A Block · Shift-I</span>
+                                </div>
+                            </td>
+                            <td class="slot empty-slot">
+                                <span class="break-label">Break</span>
+                            </td>
+                            <td class="slot class-cell algebra">
+                                <div class="class-inner">
+                                    <span class="subject-tag"><i class="fas fa-square-root-variable"></i> Linear Algebra</span>
+                                    <span class="faculty-tag"><i class="fas fa-chalkboard-user"></i> Maths-Dr Waqas Sarwar</span>
+                                    <span class="room-tag"><i class="fas fa-location-dot"></i> C-203 · Shift-I</span>
+                                </div>
+                            </td>
+                            <td class="slot class-cell daa">
+                                <div class="class-inner">
+                                    <span class="subject-tag"><i class="fas fa-code-branch"></i> Design & Analysis of Algorithms</span>
+                                    <span class="faculty-tag"><i class="fas fa-chalkboard-user"></i> CS-Mr Junaid Nazar</span>
+                                    <span class="room-tag"><i class="fas fa-location-dot"></i> C-302 · Shift-I</span>
+                                </div>
+                            </td>
+                            <td class="slot class-cell os">
+                                <div class="class-inner">
+                                    <span class="subject-tag"><i class="fas fa-flask"></i> Operating Systems Lab</span>
+                                    <span class="faculty-tag"><i class="fas fa-chalkboard-user"></i> CS-Ms Warda Aslam</span>
+                                    <span class="room-tag"><i class="fas fa-location-dot"></i> Lecture Hall 01</span>
+                                </div>
+                            </td>
+                            <td class="slot empty-slot">
+                                <span class="break-label">Free</span>
+                            </td>
+                        </tr>
+
+                        <!-- Wednesday -->
+                        <tr>
+                            <th class="day-cell">
+                                <span class="day-short">WED</span>
+                                <span class="day-full">Wednesday</span>
+                            </th>
+                            <td class="slot class-cell daa">
+                                <div class="class-inner">
+                                    <span class="subject-tag"><i class="fas fa-code-branch"></i> Design & Analysis of Algorithms</span>
+                                    <span class="faculty-tag"><i class="fas fa-chalkboard-user"></i> CS-Mr Junaid Nazar</span>
+                                    <span class="room-tag"><i class="fas fa-location-dot"></i> C-302 · Shift-I</span>
+                                </div>
+                            </td>
+                            <td class="slot empty-slot" colspan="2">
+                                <span class="break-label">Free Period</span>
+                            </td>
+                            <td class="slot class-cell os lab-span" colspan="3">
+                                <div class="class-inner">
+                                    <span class="subject-tag"><i class="fas fa-flask"></i> Operating Systems Lab</span>
+                                    <span class="faculty-tag"><i class="fas fa-chalkboard-user"></i> CS-Ms Warda Aslam</span>
+                                    <span class="room-tag"><i class="fas fa-location-dot"></i> Lab 13 C Block · 3rd Floor · Shift-I</span>
+                                </div>
+                            </td>
+                            <td class="slot class-cell fswd lab-span" colspan="2">
+                                <div class="class-inner">
+                                    <span class="subject-tag"><i class="fas fa-laptop-code"></i> Full Stack Web Development</span>
+                                    <span class="faculty-tag"><i class="fas fa-chalkboard-user"></i> CS-Mr Hafiz Obaid Ullah Khan</span>
+                                    <span class="room-tag"><i class="fas fa-location-dot"></i> Lecture Hall 01</span>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Thursday -->
+                        <tr>
+                            <th class="day-cell">
+                                <span class="day-short">THU</span>
+                                <span class="day-full">Thursday</span>
+                            </th>
+                            <td class="slot empty-slot" colspan="2">
+                                <span class="break-label">Free Period</span>
+                            </td>
+                            <td class="slot class-cell ai">
+                                <div class="class-inner">
+                                    <span class="subject-tag"><i class="fas fa-robot"></i> Artificial Intelligence</span>
+                                    <span class="faculty-tag"><i class="fas fa-chalkboard-user"></i> CS-Ms Maryam Wardah</span>
+                                    <span class="room-tag"><i class="fas fa-location-dot"></i> C-202 · Shift-I</span>
+                                </div>
+                            </td>
+                            <td class="slot class-cell fswd lab-span" colspan="3">
+                                <div class="class-inner">
+                                    <span class="subject-tag"><i class="fas fa-flask"></i> Full Stack Web Development Lab</span>
+                                    <span class="faculty-tag"><i class="fas fa-chalkboard-user"></i> CS-Mr Hafiz Obaid Ullah Khan</span>
+                                    <span class="room-tag"><i class="fas fa-location-dot"></i> Lab 5 A Block · Shift-I</span>
+                                </div>
+                            </td>
+                            <td class="slot class-cell fswd">
+                                <div class="class-inner">
+                                    <span class="subject-tag"><i class="fas fa-laptop-code"></i> Full Stack Web Development</span>
+                                    <span class="faculty-tag"><i class="fas fa-chalkboard-user"></i> CS-Mr Hafiz Obaid Ullah Khan</span>
+                                    <span class="room-tag"><i class="fas fa-location-dot"></i> Lecture Hall 01</span>
+                                </div>
+                            </td>
+                            <td class="slot empty-slot">
+                                <span class="break-label">Free</span>
+                            </td>
+                        </tr>
+
+                        <!-- Friday -->
+                        <tr>
+                            <th class="day-cell">
+                                <span class="day-short">FRI</span>
+                                <span class="day-full">Friday</span>
+                            </th>
+                            <td class="slot empty-slot" colspan="2">
+                                <span class="break-label">Free Period</span>
+                            </td>
+                            <td class="slot class-cell management">
+                                <div class="class-inner">
+                                    <span class="subject-tag"><i class="fas fa-briefcase"></i> Intro to Management</span>
+                                    <span class="faculty-tag"><i class="fas fa-chalkboard-user"></i> AUSOM-Ms Ayesha Munir</span>
+                                    <span class="room-tag"><i class="fas fa-location-dot"></i> C-302 · Shift-I</span>
+                                </div>
+                            </td>
+                            <td class="slot class-cell algebra">
+                                <div class="class-inner">
+                                    <span class="subject-tag"><i class="fas fa-square-root-variable"></i> Linear Algebra</span>
+                                    <span class="faculty-tag"><i class="fas fa-chalkboard-user"></i> Maths-Dr Waqas Sarwar</span>
+                                    <span class="room-tag"><i class="fas fa-location-dot"></i> C-301 · Shift-I</span>
+                                </div>
+                            </td>
+                            <td class="slot class-cell fswd lab-span" colspan="2">
+                                <div class="class-inner">
+                                    <span class="subject-tag"><i class="fas fa-laptop-code"></i> Full Stack Web Development</span>
+                                    <span class="faculty-tag"><i class="fas fa-chalkboard-user"></i> CS-Mr Hafiz Obaid Ullah Khan</span>
+                                    <span class="room-tag"><i class="fas fa-location-dot"></i> Lecture Hall 01</span>
+                                </div>
+                            </td>
+                            <td class="slot empty-slot" colspan="2">
+                                <span class="break-label">Friday Prayers & Break</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Subject Legend Bar -->
+            <footer class="legend-panel">
+                <div class="legend-items">
+                    <span class="legend-chip"><i class="legend-dot ai"></i> Artificial Intelligence</span>
+                    <span class="legend-chip"><i class="legend-dot os"></i> Operating Systems</span>
+                    <span class="legend-chip"><i class="legend-dot daa"></i> Algorithms (DAA)</span>
+                    <span class="legend-chip"><i class="legend-dot algebra"></i> Linear Algebra</span>
+                    <span class="legend-chip"><i class="legend-dot management"></i> Management</span>
+                    <span class="legend-chip"><i class="legend-dot fswd"></i> Web Development</span>
+                </div>
+                <div class="legend-student">
+                    <span>Student: <strong>Mubashir</strong></span>
+                    <span>Roll No: <strong>241845</strong></span>
+                </div>
+            </footer>
+        </section>
+
+        <p class="scroll-hint"><i class="fas fa-info-circle"></i> Showing 1-hour instructional blocks. Swipe horizontally on smaller screens to browse the complete schedule.</p>
+    </main>
+</body>
+</html>
