@@ -1,0 +1,75 @@
+/* AFIYA Natural Products - Simple & Clean Styles */
+:root {
+    --afiya-green: #2d6a4f;
+    --afiya-green-hover: #1b4332;
+    --afiya-light-bg: #f8f9fa;
+}
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #2b2d42;
+    background-color: var(--afiya-light-bg);
+}
+
+/* Brand colors */
+.text-afiya {
+    color: var(--afiya-green) !important;
+}
+
+.bg-afiya {
+    background-color: var(--afiya-green) !important;
+    color: #ffffff;
+}
+
+.btn-afiya {
+    background-color: var(--afiya-green);
+    border-color: var(--afiya-green);
+    color: #ffffff;
+}
+
+.btn-afiya:hover {
+    background-color: var(--afiya-green-hover);
+    border-color: var(--afiya-green-hover);
+    color: #ffffff;
+}
+
+.btn-outline-afiya {
+    border-color: var(--afiya-green);
+    color: var(--afiya-green);
+}
+
+.btn-outline-afiya:hover {
+    background-color: var(--afiya-green);
+    color: #ffffff;
+}
+
+/* Product Cards */
+.product-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 8px;
+}
+
+.product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08) !important;
+}
+
+.product-img {
+    height: 210px;
+    object-fit: cover;
+    width: 100%;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+/* Rating Stars */
+.rating-stars {
+    color: #f59e0b;
+    font-size: 0.85rem;
+}
+
+/* Simple Hero Banner */
+.hero-banner {
+    background-color: #e9f5ed;
+    border-bottom: 1px solid #d8e2dc;
+}

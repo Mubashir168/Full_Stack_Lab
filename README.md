@@ -1,83 +1,76 @@
-# Full Stack Web Development — Laboratory Tasks
+# Full Stack Web Development — Laboratory Submissions
 
 **Student Name:** Mubashir  
 **Roll Number:** 241845  
-**Department:** Computer Science  
+**Discipline:** BS Computer Science  
 **Session:** Fall 2026  
 
 ---
 
-## 📌 Repository Overview
+## 📌 Repository Structure
 
-This repository contains the complete laboratory submissions for the Full Stack Web Development course, featuring modern, responsive front-end applications developed with semantic HTML5, modern CSS3 (Flexbox & Grid), and human-centered UI/UX principles.
-
----
-
-## 🚀 Lab 2 Deliverables
-
-All Lab 2 tasks are structured in the [`Lab2/`](./Lab2/) directory:
-
-### 1. [Personal Developer Portfolio](./Lab2/Portfolio/)
-- **Directory:** `Lab2/Portfolio/`
-- **Features:**
-  - Modern dark-slate developer aesthetic (`#07090e` palette)
-  - Interactive Bento-grid project cards linking to all sibling lab deliverables
-  - Monogram brand identity (`MB`), live availability pill, and technical metric counters
-  - Clean code preview terminal card and structured competencies grid
-  - Fully responsive across all mobile, tablet, and desktop viewports
-
-### 2. [Academic Weekly Timetable](./Lab2/timetable/)
-- **Directory:** `Lab2/timetable/`
-- **Features:**
-  - Executive university timetable dashboard with student credential banner (**Mubashir | 241845**)
-  - Clean 8-period daily schedule with time duration tags
-  - Custom color-coded micro-cards for every course (AI, OS, DAA, Linear Algebra, Management, Full Stack Web Development)
-  - Visual diagonal hatch pattern for multi-hour lab slots
-  - Horizontal scroller support for compact screen sizes
-
-### 3. [Modern Social Network Feed](./Lab2/facebookhomepage/)
-- **Directory:** `Lab2/facebookhomepage/`
-- **Features:**
-  - Sleek midnight-glass social feed interface (`#0b0f17` background)
-  - Active verified user profile for **Mubashir (Roll No: 241845)**
-  - Interactive top navigation bar with search focus states and active indicator pills
-  - Modern curved story bubbles with gradient neon rings
-  - Rich post composer and engaging feed cards with interaction counters and contact sidebar
-
-### 4. [AuraStudio Creative Workspace](./Lab2/interestingUI/)
-- **Directory:** `Lab2/interestingUI/`
-- **Features:**
-  - **100% Pure CSS-only interactive state management** (no JavaScript required)
-  - Dynamic Night / Light mode toggling using CSS checkbox state
-  - Multi-view navigation tabs (Overview, Focus Chamber, Technical Scratchpad) powered by CSS radio logic
-  - Real-time Chromatic Palette orb switcher (Calm Cyan vs. Solar Iris)
-  - Visual horizon study, animated progress meters, and expand/collapse `<details>` accordion
-
-### 5. [IEEE Research Paper Template](./Lab2/IEEETemplate/)
-- **Directory:** `Lab2/IEEETemplate/`
-- **Features:**
-  - Camera-ready IEEE Transactions on Computational Intelligence publication format
-  - Lead author: **Mubashir (Roll No: 241845)**
-  - Authentic Section I drop cap styling
-  - High-precision IEEE Booktabs publication table
-  - Figure frames with italicized captions and bracketed hanging-indent reference list
+```
+Full_Stack_Lab/
+├── Lab3/                                # Lab 3: Bootstrap 5 & E-Commerce
+│   ├── ecommerce/                       # AFIYA Natural Products E-Commerce Store
+│   │   ├── index.html                   # Navbar, Hero Banner, 6 Products, Reviews, Footer
+│   │   ├── cart.html                    # Display & Edit Basket (Qty +/-, Total Calculation)
+│   │   ├── checkout.html                # Delivery Form, Payment Options (Card/COD), Summary
+│   │   ├── login.html                   # Customer Login Form
+│   │   ├── signup.html                  # Customer Registration Form
+│   │   ├── js/cart.js                   # Beginner-friendly Cart state logic (localStorage)
+│   │   └── style.css                    # Clean natural green styling
+│   ├── IEEETemplate/index.html          # Academic Paper Template (Bootstrap 2-column grid & tables)
+│   ├── Portfolio/index.html             # Developer Portfolio (Bootstrap components & badges)
+│   ├── facebookhomepage/index.html      # Social Media Feed (Bootstrap 3-column layout & cards)
+│   ├── interestingUI/index.html         # AuraStudio Workspace (Bootstrap Nav-Pills, progress & accordion)
+│   ├── timetable/index.html             # Class Timetable (Bootstrap table-responsive & badges)
+│   └── README.md                        # Lab 3 specific documentation
+├── Lab2/                                # Lab 2: Custom HTML5 & CSS3 Tasks
+│   ├── IEEETemplate/                    # IEEE Camera-Ready Layout
+│   ├── Portfolio/                       # Bento Grid Developer Portfolio
+│   ├── facebookhomepage/                # Dark Social Network Feed
+│   ├── interestingUI/                   # AuraStudio Creative Workspace
+│   └── timetable/                       # Academic Class Timetable
+└── labtask1-calculator/                 # Lab 1: Web Calculator
+    ├── index.html
+    └── style.css
+```
 
 ---
 
-## 🧮 Lab 1 Deliverable
+## 🌿 Lab 3: Bootstrap 5 & AFIYA E-Commerce Store
 
-### [Executive Web Calculator](./labtask1-calculator/)
-- **Directory:** `labtask1-calculator/`
-- **Features:**
-  - Sleek glassmorphic calculator interface with clean numerical keypad
-  - Functional grid layout and responsive card container
+### Task 1: Bootstrap 5 Migration
+All tasks from Lab 2 were re-engineered using standard **Bootstrap 5.3** utility classes and components:
+- **[IEEE Research Paper Template](./Lab3/IEEETemplate/index.html):** Multi-column layout using `.row` and `.col-md-6`, `.table.table-bordered`, and alert components.
+- **[Developer Portfolio](./Lab3/Portfolio/index.html):** Standard Bootstrap navbar, responsive card grid, and badge competencies cloud.
+- **[Social Media Feed](./Lab3/facebookhomepage/index.html):** 3-column Bootstrap responsive feed with scrolling stories row and card posts.
+- **[AuraStudio Workspace](./Lab3/interestingUI/index.html):** Interactive workspace with Bootstrap Nav-Pills, progress bar, and collapsible notes accordion.
+- **[Class Timetable](./Lab3/timetable/index.html):** Table wrapped in `.table-responsive` with contextual subject alert colors.
+
+### Task 2: AFIYA Natural Products E-Commerce Store ([`Lab3/ecommerce/`](./Lab3/ecommerce/))
+- **Brand:** **AFIYA** (Pure, Natural & Organic Essentials)
+- **Niche:** 100% Pure, Organic & Chemical-Free Natural Products (Raw Mountain Honey, Cold-Pressed Argan Oil, Shea Butter Soap, Aloe Vera Gel, Lavender Essential Oil, Chamomile Tea).
+- **UI Design:** Simple, clean, nature-inspired green and light aesthetic with standard Bootstrap 5 elements.
+
+#### All 10 Required Features:
+1. **Navbar:** [`index.html`](./Lab3/ecommerce/index.html) — Logo with leaf icon, search box, links, login/signup buttons, and **live basket counter badge**.
+2. **Hero Section:** [`index.html`](./Lab3/ecommerce/index.html) — Natural purity banner with 4 value-prop benefit cards.
+3. **Product Listing:** [`index.html`](./Lab3/ecommerce/index.html) — 6 organic products with star ratings, prices, and Add to Basket buttons.
+4. **Reviews:** [`index.html`](./Lab3/ecommerce/index.html) — 3 verified customer feedback cards with 5-star ratings.
+5. **Add to Cart:** Handled via [`js/cart.js`](./Lab3/ecommerce/js/cart.js) using `localStorage` and Bootstrap toast alerts.
+6. **Display Cart:** [`cart.html`](./Lab3/ecommerce/cart.html) — Clean table listing all items in the basket with thumbnail, unit price, quantity, and line total.
+7. **Edit Cart:** [`cart.html`](./Lab3/ecommerce/cart.html) — Plus (`+`) and minus (`-`) quantity buttons and trash icon to remove products with live recalculations.
+8. **Checkout:** [`checkout.html`](./Lab3/ecommerce/checkout.html) — Delivery address form, payment options (Card / COD), order summary, and confirmation modal.
+9. **Login:** [`login.html`](./Lab3/ecommerce/login.html) — Simple customer sign-in card.
+10. **Signup:** [`signup.html`](./Lab3/ecommerce/signup.html) — Customer registration card with student ID (`241845`).
 
 ---
 
-## 💻 Tech Stack & Tools
-
-- **Markup:** Semantic HTML5
-- **Styling:** Modern CSS3 (CSS Grid, Flexbox, Custom Properties / CSS Variables)
-- **Typography:** Plus Jakarta Sans, Inter, Crimson Pro, JetBrains Mono
+## 💻 Tech Stack
+- **Framework:** Bootstrap 5.3 (via CDN)
+- **Markup:** HTML5 (Semantic Structure)
+- **Styling:** CSS3 & Bootstrap Utilities
+- **Scripting:** Vanilla JavaScript (ES6)
 - **Icons:** Font Awesome 6
-- **Version Control:** Git & GitHub

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IEEE Transactions Template (Bootstrap 5) - Mubashir (241845)</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Times New Roman', Times, serif;
+            color: #212529;
+            line-height: 1.5;
+        }
+        .paper-sheet {
+            max-width: 900px;
+            background: #ffffff;
+        }
+        .text-justify {
+            text-align: justify;
+        }
+        .drop-cap {
+            float: left;
+            font-size: 3.2rem;
+            line-height: 0.8;
+            padding-right: 8px;
+            font-weight: bold;
+            color: #0d6efd;
+        }
+        .ref-item {
+            text-indent: -1.5rem;
+            padding-left: 1.5rem;
+            margin-bottom: 0.4rem;
+        }
+    </style>
+</head>
+<body class="py-4">
+
+    <!-- Paper Container -->
+    <div class="container paper-sheet p-4 p-md-5 shadow-sm border rounded-1">
+        
+        <!-- Top Running Header -->
+        <header class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-4 text-muted small">
+            <span class="fw-semibold text-primary">IEEE Transactions on Computational Intelligence</span>
+            <span>Vol. 16, No. 4, Fall 2026</span>
+        </header>
+
+        <!-- Paper Title -->
+        <div class="text-center mb-4">
+            <h1 class="fw-bold fs-3 mb-3">Advanced Techniques in Machine Learning for Real-Time Data Stream Analytics</h1>
+            
+            <!-- Authors Row using Bootstrap Grid -->
+            <div class="row g-3 justify-content-center text-center">
+                <div class="col-md-4">
+                    <strong class="d-block fs-6">Mubashir</strong>
+                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle">Roll No: 241845</span>
+                    <small class="d-block text-muted fst-italic mt-1">Department of Computer Science<br>University of Engineering & Technology</small>
+                    <small class="text-secondary d-block">mubashir.241845@student.uet.edu.pk</small>
+                </div>
+                <div class="col-md-4">
+                    <strong class="d-block fs-6">Hamza Siddiqui</strong>
+                    <span class="badge bg-secondary-subtle text-secondary border">Research Fellow</span>
+                    <small class="d-block text-muted fst-italic mt-1">Faculty of Information Technology<br>Institute of Business Administration</small>
+                    <small class="text-secondary d-block">hamza.siddiqui@iba.edu.pk</small>
+                </div>
+                <div class="col-md-4">
+                    <strong class="d-block fs-6">Ayesha Noor</strong>
+                    <span class="badge bg-secondary-subtle text-secondary border">Co-Principal Investigator</span>
+                    <small class="d-block text-muted fst-italic mt-1">Department of Computer Science<br>University of Engineering & Technology</small>
+                    <small class="text-secondary d-block">ayesha.noor@uet.edu.pk</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Abstract & Keywords in Bootstrap Alert Card -->
+        <div class="alert alert-light border-start border-primary border-4 p-3 mb-4 text-justify small">
+            <p class="mb-2">
+                <strong class="fst-italic text-primary">Abstract</strong>—This paper presents a comprehensive study of advanced machine learning techniques applied to real-time data stream processing systems. We evaluate the performance characteristics of deep neural networks, online random forests, and support vector machines in high-frequency data environments. Our experimental evaluations confirm that adaptive learning strategies combined with partitioned stream ingestion reduce latency by 35% while preserving 98.5% classification accuracy. We benchmark our pipeline on industrial IoT telemetry and analyze throughput trade-offs across distributed edge compute clusters.
+            </p>
+            <div>
+                <strong class="fst-italic text-dark">Index Terms</strong>—Real-time machine learning, data stream analytics, concept drift, distributed computing, low latency.
+            </div>
+        </div>
+
+        <!-- Two Column Content Grid (Bootstrap row and col-md-6) -->
+        <div class="row g-4 text-justify small">
+            <!-- Left Column -->
+            <div class="col-md-6">
+                <!-- Section I -->
+                <section class="mb-3">
+                    <h2 class="fs-6 text-uppercase fw-bold text-center border-bottom pb-1 mb-2">I. Introduction</h2>
+                    <p class="mb-2">
+                        <span class="drop-cap">T</span>he rapid growth of interconnected telemetry sensors, mobile devices, and IoT hardware has created substantial demands for high-throughput stream processing systems [1]. While traditional batch analytics models are effective for historical datasets, they cannot achieve the sub-second latency thresholds required by modern industrial applications [2]. Machine learning has consequently become indispensable for extracting real-time actionable insights from streaming sources.
+                    </p>
+                    <p class="mb-2">
+                        This research introduces an optimized framework that integrates lightweight incremental training with distributed queueing topologies to maintain sub-second response times under variable traffic surges [3].
+                    </p>
+                </section>
+
+                <!-- Section II -->
+                <section class="mb-3">
+                    <h2 class="fs-6 text-uppercase fw-bold text-center border-bottom pb-1 mb-2">II. Related Work</h2>
+                    <p class="mb-2">
+                        Recent streaming paradigms emphasize models that process unbounded data streams using fixed memory horizons. Bifet et al. [4] designed adaptive windowing procedures (ADWIN) that detect concept drift by tracking statistically significant variances in incoming distributions.
+                    </p>
+                    <p class="mb-2">
+                        Distributed orchestration frameworks including Apache Flink and Apache Spark Streaming provide parallel task distribution [5]. Our hybrid architecture builds upon these systems by implementing decoupled local inference workers synchronized with a global parameter server [6].
+                    </p>
+                </section>
+
+                <!-- Figure 1 Card -->
+                <div class="card p-2 text-center mb-3 bg-light border">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=700&q=80" alt="Architecture Diagram" class="img-fluid rounded mx-auto" style="max-height: 180px; object-fit: cover;">
+                    <div class="card-footer bg-transparent border-0 pt-2 pb-0 text-muted fst-italic">
+                        <strong>Fig. 1.</strong> High-throughput distributed ingestion and streaming ML inference architecture.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="col-md-6">
+                <!-- Section III -->
+                <section class="mb-3">
+                    <h2 class="fs-6 text-uppercase fw-bold text-center border-bottom pb-1 mb-2">III. Methodology</h2>
+                    <h3 class="fs-6 fw-bold fst-italic mb-1">A. Ingestion Pipeline</h3>
+                    <p class="mb-2">
+                        Our ingestion framework utilizes partitioned lock-free queues capable of sustaining over 100,000 events/second. Feature normalization occurs in-memory using sliding FIFO buffers to minimize persistent storage overhead [7].
+                    </p>
+
+                    <h3 class="fs-6 fw-bold fst-italic mb-1">B. Model Adaptation</h3>
+                    <p class="mb-2">
+                        Incremental updates occur every 1,000 samples or upon automated drift detection, ensuring model weights adapt seamlessly without halting the inference loop.
+                    </p>
+                </section>
+
+                <!-- Table 1 (Bootstrap Table) -->
+                <div class="mb-3">
+                    <div class="text-center fw-bold text-uppercase small mb-1">TABLE I: Experimental System Parameters</div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-sm text-center align-middle mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Value</th>
+                                    <th>Operational Mode</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Batch Size</td>
+                                    <td>256 Samples</td>
+                                    <td>Synchronous FIFO</td>
+                                </tr>
+                                <tr>
+                                    <td>Window Horizon</td>
+                                    <td>5,000 Events</td>
+                                    <td>Sliding Buffer</td>
+                                </tr>
+                                <tr>
+                                    <td>Learning Rate</td>
+                                    <td>0.001</td>
+                                    <td>Adam Optimizer</td>
+                                </tr>
+                                <tr>
+                                    <td>Compute Nodes</td>
+                                    <td>8 Nodes</td>
+                                    <td>Distributed Cluster</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Section IV -->
+                <section class="mb-3">
+                    <h2 class="fs-6 text-uppercase fw-bold text-center border-bottom pb-1 mb-2">IV. Results & Benchmarks</h2>
+                    <p class="mb-2">
+                        Benchmarking demonstrates that our streaming framework yields a 2.8× speedup compared to standard batch baselines. Operational p95 latency decreased from 2.3 seconds to 0.18 seconds while maintaining 98.5% classification accuracy [8].
+                    </p>
+
+                    <!-- Figure 2 Card -->
+                    <div class="card p-2 text-center mb-3 bg-light border">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&h=350&q=80" alt="Telemetry Latency Benchmarks" class="img-fluid rounded mx-auto" style="max-height: 180px; object-fit: cover;">
+                        <div class="card-footer bg-transparent border-0 pt-2 pb-0 text-muted fst-italic">
+                            <strong>Fig. 2.</strong> End-to-end throughput and p95 latency benchmarks under load.
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Section V: Full Width Conclusion -->
+        <div class="border-top pt-3 mt-3 text-justify small">
+            <h2 class="fs-6 text-uppercase fw-bold text-center border-bottom pb-1 mb-2">V. Conclusion</h2>
+            <p class="mb-3">
+                This study confirms that combining localized concept drift adaptation with partitioned stream ingestion achieves superior throughput and ultra-low latency without sacrificing predictive accuracy. Future research will explore federated edge learning across resource-constrained edge gateways [9], [10].
+            </p>
+        </div>
+
+        <!-- Section VI: References (Bootstrap list) -->
+        <div class="border-top pt-3 text-justify small">
+            <h2 class="fs-6 text-uppercase fw-bold text-center border-bottom pb-1 mb-2">VI. References</h2>
+            <div class="ps-2">
+                <div class="ref-item">[1] S. Madden et al., "The design of an acquisitional query processor for sensor networks," in <em>Proc. ACM SIGMOD</em>, 2003, pp. 491–506.</div>
+                <div class="ref-item">[2] M. Zaharia et al., "Apache Spark: A unified engine for big data processing," <em>Commun. ACM</em>, vol. 59, no. 11, pp. 56–65, 2016.</div>
+                <div class="ref-item">[3] A. Bifet and R. Kirkby, "Data stream mining: A practical approach," Tech. Rep., 2009.</div>
+                <div class="ref-item">[4] A. Bifet et al., "Fast perceptron decision tree learning from evolving data streams," in <em>ECML PKDD</em>, 2010.</div>
+                <div class="ref-item">[5] P. Carbone et al., "Apache Flink: Stream and batch processing in a single engine," <em>IEEE Data Eng. Bull.</em>, 2015.</div>
+                <div class="ref-item">[6] J. Dean and S. Ghemawat, "MapReduce: Simplified data processing on large clusters," <em>Commun. ACM</em>, 2008.</div>
+                <div class="ref-item">[7] A. Bifet et al., <em>Machine Learning for Data Streams with Practical Examples</em>. MIT Press, 2010.</div>
+                <div class="ref-item">[8] T. White, <em>Hadoop: The Definitive Guide</em>, O'Reilly Media, 2012.</div>
+                <div class="ref-item">[9] I. Žliobaitė et al., "Active learning with evolving streaming data," in <em>ECML PKDD</em>, 2011.</div>
+                <div class="ref-item">[10] D. Amodei et al., "Deep speech 2: End-to-end speech recognition in english and mandarin," in <em>ICML</em>, 2016.</div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="d-flex justify-content-between align-items-center pt-3 mt-4 border-top text-muted small">
+            <span><strong>Student Author:</strong> Mubashir (Roll No: 241845)</span>
+            <span>IEEE Bootstrap Template · Lab 3</span>
+            <span>Page 1 of 1</span>
+        </footer>
+    </div>
+
+    <!-- Bootstrap 5 Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
