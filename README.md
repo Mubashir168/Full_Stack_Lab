@@ -11,10 +11,13 @@
 
 ```
 Full_Stack_Lab/
-├── Lab4/                                # Lab 4: JavaScript Problem Solving Functions
-│   ├── createPhoneNumber.js             # Formats 10 digits into (XXX) XXX-XXXX
-│   ├── roundMe.js                       # Variable argument rounding function
-│   └── README.md                        # Documentation & test examples
+├── Lab4/                                # Lab 4: JavaScript Lab Tasks
+│   ├── task1.js                         # Variables & Biography Object
+│   ├── task2.js                         # Next Prime Number Finder
+│   ├── task3.js                         # Phone Number Formatter
+│   ├── task4.js                         # Round Me Function
+│   ├── task5.js                         # Math Functions (abs, ceil, floor)
+│   └── task6.js                         # Sum of Multiples
 ├── Lab3/                                # Lab 3: Bootstrap 5 & E-Commerce
 │   ├── ecommerce/                       # AFIYA Natural Products E-Commerce Store
 │   │   ├── index.html                   # Navbar, Hero Banner, 6 Products, Reviews, Footer
@@ -72,16 +75,14 @@ All tasks from Lab 2 were re-engineered using standard **Bootstrap 5.3** utility
 
 ---
 
-## ⚡ Lab 4: JavaScript Problem Solving
+## ⚡ Lab 4: JavaScript Lab Tasks
 
-### Task 1: Create Phone Number ([`Lab4/createPhoneNumber.js`](./Lab4/createPhoneNumber.js))
-Formats an array of 10 integers (0–9) into standard US/international phone number format: `(XXX) XXX-XXXX`.
-
-### Task 2: Round Me Function ([`Lab4/roundMe.js`](./Lab4/roundMe.js))
-A flexible rounding function utilizing ES6 rest parameters (`...args`):
-- `0` arguments: returns `0`
-- `1` argument: returns single rounded integer (`Math.round(val)`)
-- `2+` arguments: returns an array containing each number rounded to the nearest integer
+- **[`Lab4/task1.js`](./Lab4/task1.js):** Variables & Biography Object (Student details, nested address, degree program).
+- **[`Lab4/task2.js`](./Lab4/task2.js):** Prime Number Finder (Finds the immediate next prime number after a given number).
+- **[`Lab4/task3.js`](./Lab4/task3.js):** Phone Number Formatter (Converts an array of 10 digits into `(XXX) XXX-XXXX`).
+- **[`Lab4/task4.js`](./Lab4/task4.js):** Round Me Function (Custom variable-argument rounding using `...args`).
+- **[`Lab4/task5.js`](./Lab4/task5.js):** Math Utilities (`absMe`, `ceilMe`, `floorMe` with variable arguments).
+- **[`Lab4/task6.js`](./Lab4/task6.js):** Sum of Multiples (Calculates sum of multiples of `x` or `y` below limit `z`).
 
 ---
 
