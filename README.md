@@ -11,6 +11,10 @@
 
 ```
 Full_Stack_Lab/
+├── Lab4/                                # Lab 4: JavaScript Problem Solving Functions
+│   ├── createPhoneNumber.js             # Formats 10 digits into (XXX) XXX-XXXX
+│   ├── roundMe.js                       # Variable argument rounding function
+│   └── README.md                        # Documentation & test examples
 ├── Lab3/                                # Lab 3: Bootstrap 5 & E-Commerce
 │   ├── ecommerce/                       # AFIYA Natural Products E-Commerce Store
 │   │   ├── index.html                   # Navbar, Hero Banner, 6 Products, Reviews, Footer
@@ -65,6 +69,19 @@ All tasks from Lab 2 were re-engineered using standard **Bootstrap 5.3** utility
 8. **Checkout:** [`checkout.html`](./Lab3/ecommerce/checkout.html) — Delivery address form, payment options (Card / COD), order summary, and confirmation modal.
 9. **Login:** [`login.html`](./Lab3/ecommerce/login.html) — Simple customer sign-in card.
 10. **Signup:** [`signup.html`](./Lab3/ecommerce/signup.html) — Customer registration card with student ID (`241845`).
+
+---
+
+## ⚡ Lab 4: JavaScript Problem Solving
+
+### Task 1: Create Phone Number ([`Lab4/createPhoneNumber.js`](./Lab4/createPhoneNumber.js))
+Formats an array of 10 integers (0–9) into standard US/international phone number format: `(XXX) XXX-XXXX`.
+
+### Task 2: Round Me Function ([`Lab4/roundMe.js`](./Lab4/roundMe.js))
+A flexible rounding function utilizing ES6 rest parameters (`...args`):
+- `0` arguments: returns `0`
+- `1` argument: returns single rounded integer (`Math.round(val)`)
+- `2+` arguments: returns an array containing each number rounded to the nearest integer
 
 ---
 
