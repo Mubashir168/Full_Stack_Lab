@@ -11,6 +11,18 @@
 
 ```
 Full_Stack_Lab/
+├── Lab5_CampusFlow/                     # Lab 5: Advanced JavaScript (CampusFlow)
+│   ├── package.json
+│   ├── README.md
+│   ├── VIVA_NOTES.md
+│   ├── task1/admission.js               # Admission engine & eligibility
+│   ├── task2/performance.js             # Performance engine & grading
+│   ├── task3/profileUpdate.js           # Student profile update & immutability
+│   ├── task4/users.js                   # User hierarchy & prototype/this
+│   ├── task5/                           # ES Modules & JSON processing
+│   ├── task6/callbacks.js               # Callback-based course enrollment
+│   ├── task7/promises.js                # Promise-based fee payment flow
+│   └── task8/apiAggregator.js           # async/await student dashboard aggregator
 ├── Lab4/                                # Lab 4: JavaScript Lab Tasks
 │   ├── task1.js                         # Variables & Biography Object
 │   ├── task2.js                         # Next Prime Number Finder
@@ -83,6 +95,22 @@ All tasks from Lab 2 were re-engineered using standard **Bootstrap 5.3** utility
 - **[`Lab4/task4.js`](./Lab4/task4.js):** Round Me Function (Custom variable-argument rounding using `...args`).
 - **[`Lab4/task5.js`](./Lab4/task5.js):** Math Utilities (`absMe`, `ceilMe`, `floorMe` with variable arguments).
 - **[`Lab4/task6.js`](./Lab4/task6.js):** Sum of Multiples (Calculates sum of multiples of `x` or `y` below limit `z`).
+
+---
+
+## 🚀 Lab 5: Advanced JavaScript (CampusFlow)
+
+Pure Node.js implementation focusing on modern JavaScript features (ES Modules, async/await, closures, prototypes, and asynchronous execution):
+
+- **[`Lab5_CampusFlow/task1/admission.js`](./Lab5_CampusFlow/task1/admission.js):** Task 1 – Admission engine (eligibility validation, merit calculation, fee status).
+- **[`Lab5_CampusFlow/task2/performance.js`](./Lab5_CampusFlow/task2/performance.js):** Task 2 – Performance engine (grading scale, GPA calculation, academic standing).
+- **[`Lab5_CampusFlow/task3/profileUpdate.js`](./Lab5_CampusFlow/task3/profileUpdate.js):** Task 3 – Profile updates using immutable object patterns and rest/spread syntax.
+- **[`Lab5_CampusFlow/task4/users.js`](./Lab5_CampusFlow/task4/users.js):** Task 4 – User class hierarchy, prototypes, and dynamic context (`this`).
+- **[`Lab5_CampusFlow/task5/main.js`](./Lab5_CampusFlow/task5/main.js):** Task 5 – Modular architecture with ES Modules (`Student.js`, `gradeUtils.js`, `transcriptService.js`).
+- **[`Lab5_CampusFlow/task6/callbacks.js`](./Lab5_CampusFlow/task6/callbacks.js):** Task 6 – Asynchronous course registration workflow using callback patterns.
+- **[`Lab5_CampusFlow/task7/promises.js`](./Lab5_CampusFlow/task7/promises.js):** Task 7 – Promise-based fee payment, receipt generation, and transaction chaining.
+- **[`Lab5_CampusFlow/task8/apiAggregator.js`](./Lab5_CampusFlow/task8/apiAggregator.js):** Task 8 – Async/await student portal aggregator using `Promise.allSettled`.
+- **[`Lab5_CampusFlow/VIVA_NOTES.md`](./Lab5_CampusFlow/VIVA_NOTES.md):** Comprehensive Viva Preparation Notes covering all JS core concepts.
 
 ---
 
