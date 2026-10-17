@@ -11,6 +11,10 @@
 
 ```
 Full_Stack_Lab/
+├── Lab6/                                # Lab 6: async/await & Promise.all
+│   ├── README.md
+│   ├── q1.js                            # Q1: async/await API fetch with error handling
+│   └── q2.js                            # Q2: Promise.all parallel fetch & validation
 ├── Lab5_CampusFlow/                     # Lab 5: Advanced JavaScript (CampusFlow)
 │   ├── package.json
 │   ├── README.md
@@ -111,6 +115,16 @@ Pure Node.js implementation focusing on modern JavaScript features (ES Modules, 
 - **[`Lab5_CampusFlow/task7/promises.js`](./Lab5_CampusFlow/task7/promises.js):** Task 7 – Promise-based fee payment, receipt generation, and transaction chaining.
 - **[`Lab5_CampusFlow/task8/apiAggregator.js`](./Lab5_CampusFlow/task8/apiAggregator.js):** Task 8 – Async/await student portal aggregator using `Promise.allSettled`.
 - **[`Lab5_CampusFlow/VIVA_NOTES.md`](./Lab5_CampusFlow/VIVA_NOTES.md):** Comprehensive Viva Preparation Notes covering all JS core concepts.
+
+---
+
+## 🌐 Lab 6: async/await & Promise.all
+
+Pure Node.js implementation utilizing ES2022 built-in `fetch` and JSONPlaceholder API:
+
+- **[`Lab6/q1.js`](./Lab6/q1.js):** Question 1 – Asynchronous user fetch implementation using `async`/`await`, validating HTTP response codes (`response.ok`), and returning formatted objects or error instances.
+- **[`Lab6/q2.js`](./Lab6/q2.js):** Question 2 – Parallel API requests using `Promise.all([getUser(), getPost()])`, resolving or rejecting based on comprehensive data validation of returned payloads.
+- **[`Lab6/README.md`](./Lab6/README.md):** Lab 6 documentation, execution instructions, and key asynchronous concepts.
 
 ---
 
