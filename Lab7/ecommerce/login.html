@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Login - AFIYA Natural Products (Mubashir 241845)</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light d-flex flex-column min-vh-100">
+
+    <!-- Top Navbar -->
+    <nav class="navbar navbar-expand navbar-light bg-white border-bottom py-3 shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2 fw-bold fs-4 text-afiya" href="index.html">
+                <i class="fas fa-seedling fs-3 text-success"></i>
+                <span>AFIYA</span>
+                <span class="badge bg-success-subtle text-success fs-6 fw-normal px-2 py-1 rounded-pill">Natural & Organic</span>
+            </a>
+            <div class="d-flex align-items-center gap-3 ms-auto">
+                <a href="index.html" class="btn btn-outline-secondary btn-sm">
+                    <i class="fas fa-arrow-left me-1"></i> Return to Store
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Container -->
+    <main class="container my-auto py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card border bg-white shadow-sm p-4 p-md-5">
+                    <div class="text-center mb-4">
+                        <div class="rounded-circle bg-success bg-opacity-10 text-success d-inline-flex align-items-center justify-content-center mb-3" style="width: 55px; height: 55px;">
+                            <i class="fas fa-user-check fs-4"></i>
+                        </div>
+                        <h4 class="fw-bold text-afiya mb-1">Customer Sign In</h4>
+                        <p class="text-muted small">Access your AFIYA natural orders and loyalty points</p>
+                    </div>
+
+                    <form onsubmit="handleLogin(event)">
+                        <!-- Email Input -->
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label small fw-semibold">Email Address</label>
+                            <input type="email" class="form-control" id="loginEmail" value="mubashir.241845@example.com" placeholder="name@example.com" required>
+                        </div>
+
+                        <!-- Password Input -->
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label small fw-semibold">Password</label>
+                            <input type="password" class="form-control" id="loginPassword" value="password123" placeholder="Enter password" required>
+                        </div>
+
+                        <!-- Remember Me & Forgot Password -->
+                        <div class="d-flex justify-content-between align-items-center mb-4 small">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMe" checked>
+                                <label class="form-check-label text-muted" for="rememberMe">Remember me</label>
+                            </div>
+                            <a href="#" class="text-afiya text-decoration-none">Forgot password?</a>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-afiya w-100 py-2 fw-semibold shadow-sm mb-3">
+                            Sign In to AFIYA
+                        </button>
+                    </form>
+
+                    <div class="text-center small text-muted border-top pt-3">
+                        New to AFIYA? <a href="signup.html" class="fw-bold text-afiya text-decoration-none">Create an Account</a>
+                    </div>
+                </div>
+
+                <!-- Student Info Badge -->
+                <div class="text-center mt-3 text-muted small">
+                    AFIYA Natural Store · <strong>Mubashir (Roll No: 241845)</strong>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-top py-3 mt-auto text-center text-muted small">
+        © 2026 AFIYA Natural Products · Lab 3 E-Commerce Store Submission
+    </footer>
+
+    <!-- Bootstrap 5 Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function handleLogin(e) {
+            e.preventDefault();
+            alert("Sign in successful! Welcome back to AFIYA, Mubashir (241845).");
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Basket - AFIYA Natural Products (Mubashir 241845)</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
+
+    <!-- Top Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top border-bottom py-3 shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2 fw-bold fs-4 text-afiya" href="index.html">
+                <i class="fas fa-seedling fs-3 text-success"></i>
+                <span>AFIYA</span>
+                <span class="badge bg-success-subtle text-success fs-6 fw-normal px-2 py-1 rounded-pill">Natural & Organic</span>
+            </a>
+            
+            <div class="d-flex align-items-center gap-3 ms-auto">
+                <a href="index.html" class="btn btn-outline-secondary btn-sm">
+                    <i class="fas fa-arrow-left me-1"></i> Continue Shopping
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cart Container -->
+    <div class="container py-5">
+        
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb small">
+                <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-afiya">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Shopping Basket</li>
+            </ol>
+        </nav>
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="fw-bold text-afiya mb-0"><i class="fas fa-basket-shopping me-2"></i>Your Shopping Basket</h3>
+            <button class="btn btn-outline-danger btn-sm" onclick="clearCart()">
+                <i class="fas fa-trash-can me-1"></i> Clear Basket
+            </button>
+        </div>
+
+        <!-- Empty Cart Notice (Shown if cart is empty) -->
+        <div id="emptyCartNotice" class="card text-center p-5 border bg-white shadow-sm d-none">
+            <div class="py-4">
+                <i class="fas fa-leaf text-success display-1 mb-3 opacity-50"></i>
+                <h4 class="fw-bold text-afiya">Your Basket is Currently Empty</h4>
+                <p class="text-muted mb-4">You haven't selected any organic products yet.</p>
+                <a href="index.html#products" class="btn btn-afiya px-4 py-2">
+                    <i class="fas fa-arrow-left me-2"></i> Explore Natural Products
+                </a>
+            </div>
+        </div>
+
+        <!-- Cart Content Area (Display Cart & Edit Cart) -->
+        <div class="row g-4" id="cartContentArea">
+            <div class="col-lg-8">
+                <div class="card border bg-white shadow-sm p-3">
+                    <div class="table-responsive">
+                        <table class="table align-middle mb-0 text-center">
+                            <thead class="table-light">
+                                <tr>
+                                    <th class="text-start ps-3">Natural Product</th>
+                                    <th>Unit Price</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cartTableBody">
+                                <!-- Populated dynamically by cart.js -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mt-3 small text-muted">
+                    <span><i class="fas fa-truck text-success me-1"></i> Free delivery on orders over $50</span>
+                    <span>100% Secure Checkout Guarantee</span>
+                </div>
+            </div>
+
+            <!-- Basket Summary Card -->
+            <div class="col-lg-4">
+                <div class="card border bg-white shadow-sm p-4">
+                    <h5 class="fw-bold text-afiya mb-3 border-bottom pb-2">Order Summary</h5>
+                    
+                    <div class="d-flex justify-content-between mb-2 small">
+                        <span class="text-muted">Items Subtotal:</span>
+                        <strong id="cartSubtotal">$0.00</strong>
+                    </div>
+                    <div class="d-flex justify-content-between mb-3 small">
+                        <span class="text-muted">Delivery:</span>
+                        <strong id="cartShipping">$5.00</strong>
+                    </div>
+                    
+                    <hr class="my-2">
+                    
+                    <div class="d-flex justify-content-between fs-5 fw-bold mb-4">
+                        <span>Total:</span>
+                        <span class="text-success" id="cartGrandTotal">$0.00</span>
+                    </div>
+
+                    <!-- Proceed to Checkout Button -->
+                    <a href="checkout.html" class="btn btn-afiya w-100 py-2 fw-semibold shadow-sm">
+                        Proceed to Checkout <i class="fas fa-arrow-right ms-1"></i>
+                    </a>
+
+                    <div class="text-center mt-3">
+                        <small class="text-muted d-block"><i class="fas fa-shield-alt text-success me-1"></i> Eco-Friendly & Safe Packaging</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-top py-4 mt-5 text-center text-muted small">
+        <div class="container">
+            <p class="mb-1"><strong>AFIYA Natural & Organic Products</strong> — Lab 3 Submission</p>
+            <p class="mb-0">Developed by <strong>Mubashir</strong> · Roll No: <strong>241845</strong></p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

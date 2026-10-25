@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Registration - AFIYA Natural Products (Mubashir 241845)</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light d-flex flex-column min-vh-100">
+
+    <!-- Top Navbar -->
+    <nav class="navbar navbar-expand navbar-light bg-white border-bottom py-3 shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2 fw-bold fs-4 text-afiya" href="index.html">
+                <i class="fas fa-seedling fs-3 text-success"></i>
+                <span>AFIYA</span>
+                <span class="badge bg-success-subtle text-success fs-6 fw-normal px-2 py-1 rounded-pill">Natural & Organic</span>
+            </a>
+            <div class="d-flex align-items-center gap-3 ms-auto">
+                <a href="index.html" class="btn btn-outline-secondary btn-sm">
+                    <i class="fas fa-arrow-left me-1"></i> Return to Store
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Signup Container -->
+    <main class="container my-auto py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-7 col-lg-6">
+                <div class="card border bg-white shadow-sm p-4 p-md-5">
+                    <div class="text-center mb-4">
+                        <div class="rounded-circle bg-success bg-opacity-10 text-success d-inline-flex align-items-center justify-content-center mb-3" style="width: 55px; height: 55px;">
+                            <i class="fas fa-user-plus fs-4"></i>
+                        </div>
+                        <h4 class="fw-bold text-afiya mb-1">Create an AFIYA Account</h4>
+                        <p class="text-muted small">Register to track organic orders and receive wellness updates</p>
+                    </div>
+
+                    <form onsubmit="handleSignup(event)">
+                        <!-- Full Name -->
+                        <div class="mb-3">
+                            <label for="signupName" class="form-label small fw-semibold">Full Name</label>
+                            <input type="text" class="form-control" id="signupName" value="Mubashir" placeholder="Your Name" required>
+                        </div>
+
+                        <!-- Roll Number / Student ID -->
+                        <div class="mb-3">
+                            <label for="signupRoll" class="form-label small fw-semibold">Student ID / Roll Number</label>
+                            <input type="text" class="form-control" id="signupRoll" value="241845" placeholder="e.g. 241845" required>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <label for="signupEmail" class="form-label small fw-semibold">Email Address</label>
+                            <input type="email" class="form-control" id="signupEmail" value="mubashir.241845@example.com" placeholder="name@example.com" required>
+                        </div>
+
+                        <!-- Password -->
+                        <div class="row g-2 mb-3">
+                            <div class="col-sm-6">
+                                <label for="signupPassword" class="form-label small fw-semibold">Password</label>
+                                <input type="password" class="form-control" id="signupPassword" placeholder="••••••••" required>
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="signupConfirmPassword" class="form-label small fw-semibold">Confirm Password</label>
+                                <input type="password" class="form-control" id="signupConfirmPassword" placeholder="••••••••" required>
+                            </div>
+                        </div>
+
+                        <!-- Terms Agreement -->
+                        <div class="form-check mb-4 small">
+                            <input type="checkbox" class="form-check-input" id="termsCheck" checked required>
+                            <label class="form-check-label text-muted" for="termsCheck">
+                                I agree to the <a href="#" class="text-afiya text-decoration-none">Terms of Service</a> & <a href="#" class="text-afiya text-decoration-none">Privacy Policy</a>
+                            </label>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-afiya w-100 py-2 fw-semibold shadow-sm mb-3">
+                            Register with AFIYA
+                        </button>
+                    </form>
+
+                    <div class="text-center small text-muted border-top pt-3">
+                        Already have an account? <a href="login.html" class="fw-bold text-afiya text-decoration-none">Log In Here</a>
+                    </div>
+                </div>
+
+                <!-- Student Info Badge -->
+                <div class="text-center mt-3 text-muted small">
+                    AFIYA Natural Store · <strong>Mubashir (Roll No: 241845)</strong>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-top py-3 mt-auto text-center text-muted small">
+        © 2026 AFIYA Natural Products · Lab 3 E-Commerce Store Submission
+    </footer>
+
+    <!-- Bootstrap 5 Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function handleSignup(e) {
+            e.preventDefault();
+            alert("Registration successful! Welcome to AFIYA, Mubashir (241845).");
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>
