@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Pure Wildflower Raw Honey (500g)",
+    "category": "Organic Food",
+    "price": 18.5,
+    "image": "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": 2,
+    "name": "Cold-Pressed Moroccan Argan Oil (100ml)",
+    "category": "Natural Skincare",
+    "price": 24,
+    "image": "https://images.unsplash.com/photo-1608248597359-25f02bcbbce9?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": 3,
+    "name": "Handcrafted Shea Butter & Oat Soap",
+    "category": "Body Care",
+    "price": 8.5,
+    "image": "https://images.unsplash.com/photo-1607006311028-1b29a2c3a502?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": 4,
+    "name": "Organic Pure Aloe Vera Soothing Gel",
+    "category": "Natural Skincare",
+    "price": 14,
+    "image": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": 5,
+    "name": "French Lavender Pure Essential Oil (30ml)",
+    "category": "Aromatherapy",
+    "price": 16,
+    "image": "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": 6,
+    "name": "Herbal Chamomile & Mint Wellness Tea",
+    "category": "Organic Food",
+    "price": 12,
+    "image": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=400&q=80"
+  }
+]

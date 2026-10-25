@@ -1,0 +1,12 @@
+{
+  "name": "afiya-backend",
+  "version": "1.0.0",
+  "description": "AFIYA e-commerce store - persistent REST API (Lab 3 Part 2)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
